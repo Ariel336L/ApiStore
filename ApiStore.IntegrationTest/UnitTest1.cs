@@ -16,7 +16,7 @@ namespace ApiStore.IntegrationTest
             // Crear cliente HTTP para enviar solicitudes
             using var _httpClient = application.CreateClient();
 
-            var userSession = new UserRequest { Username = "erickz", Userpassword = "1234" };
+            var userSession = new UserRequest { Username = "usuario1", Userpassword = "contraseña123" };
             var response = await _httpClient.PostAsJsonAsync("api/users/login", userSession);
             if (response.IsSuccessStatusCode)
             {
