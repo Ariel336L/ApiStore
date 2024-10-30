@@ -66,7 +66,7 @@ namespace ApiStore.IntegrationTest
         public async Task GuardarOrder_ConDatosValidos_RetornaCreated()
         {
             AgregarTokenAlaCabecera();
-            var newOrder = new OrderRequest { ClienteId = 1, FechaPedido = DateTime.Now, EstadoPedido = "Pendiente" };
+            var newOrder = new OrderRequest { UserId = 2, EstadoPedido = "Pendiente" };
 
             var response = await _httpClient.PostAsJsonAsync("api/orders", newOrder);
 
@@ -89,7 +89,7 @@ namespace ApiStore.IntegrationTest
         public async Task EliminarOrder_OrderExistente_RetornaNoContent()
         {
             AgregarTokenAlaCabecera();
-            var id = 1;
+            var id = 2;
 
             var response = await _httpClient.DeleteAsync($"/api/orders/{id}");
 
